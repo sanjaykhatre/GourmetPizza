@@ -15,7 +15,7 @@ if (isset($_POST['submit'])) {
     ";
     $result = mysqli_query($con, $sql);
     if ($result) {
-        echo 'connected successfully';
+        header('location:home.php');
     } else {
         echo 'connected unsuccessfully';
         die(mysqli_error($con));
@@ -38,7 +38,14 @@ if (isset($_POST['submit'])) {
 </head>
 
 <body>
+
     <div class="container">
+        <div class="header" style="background-color: gray; width:100%; min-height: 20%; min-height: 25%; padding: 10px; display:flex; justify-content: space-between; margin-bottom: 15px;">
+            <div style="font-weight: bold; color: palegreen; font-size: 20px;"><a style=" text-decoration:none; color: palegreen; " href="home.php"> GOURMENT PIZZA</a> </div>
+            <div style="font-weight: bold; color: black; font-size: 15px;">Hi, Members</div>
+            <div style="font-weight: bold; color: white; font-size: 20px;">LogOut</div>
+        </div>
+        <h4>Add Memeber Info</h4>
         <form method="post">
             <div class="form-floating mb-3">
                 <input type="name" name="name" class="form-control" id="floatingInput" placeholder="name">
@@ -60,6 +67,7 @@ if (isset($_POST['submit'])) {
                 <input type="password" name="password" class="form-control" id="floatingPassword" placeholder="Password">
                 <label for="floatingPassword">Password</label>
             </div>
+            <br>
             <div class="form-floating">
                 <button name="submit" type="submit" class="btn btn-primary">Submit</button>
             </div>
