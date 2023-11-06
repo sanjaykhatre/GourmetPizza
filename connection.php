@@ -1,3 +1,4 @@
+<!-- database connection here -->
 <?php
 
 $con = mysqli_connect('localhost', 'root', '', 's8109744');
